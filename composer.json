@@ -1,0 +1,26 @@
+{
+    "name": "essam/laravel-tap-payment",
+    "description": "Tap Payment SDK Package for PHP Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sfwan Essam",
+            "email": "sfwanessam9@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload" : {
+      "psr-4" : {
+        "Rywan\\TapPayment\\" : "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Essam\\TapPayment\\TapServiceProvider"
+          ]
+      }
+    },
+}
