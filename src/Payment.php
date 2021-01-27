@@ -12,7 +12,7 @@ class Payment extends Reference implements Tap{
         $this->CONFIG_VARS[$parm] = $config[$parm];
       }else{
         if($req_status){
-          throw new \InvalidArgumentException("InvalidArgumentException $parmc field");
+          throw new \InvalidArgumentException("InvalidArgumentException $parm field");
         }
       }
     }
