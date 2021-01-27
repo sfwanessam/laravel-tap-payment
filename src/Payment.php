@@ -208,7 +208,7 @@ class Payment extends Reference implements Tap{
       CURLOPT_POSTFIELDS => "{\"charge_id\":\"".$this->REFUND_VARS['charge_id']."\",\"amount\":".$this->REFUND_VARS['amount'].",\"currency\":\"".$this->REFUND_VARS['currency']."\",\"description\":\"".$this->REFUND_VARS['description']."\",\"reason\":\"".$this->REFUND_VARS['reason']."\",
         \"reference\":{\"merchant\":\"".$this->REFUND_VARS['reference']['merchant']."\"},\"metadata\":{\"udf1\":\"".$this->REFUND_VARS['metadata']['udf1']."\",\"udf2\":\"".$this->REFUND_VARS['metadata']['udf2']."\"},\"post\":{\"url\":\"".$this->REFUND_VARS['post']['url']."\"}}",
       CURLOPT_HTTPHEADER => array(
-        "authorization: Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ",
+        "authorization: Bearer ".$this->CONFIG_VARS['secret_api_Key']." ",
         "content-type: application/json"
       ),
     ));
@@ -251,7 +251,7 @@ class Payment extends Reference implements Tap{
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_POSTFIELDS => "{}",
       CURLOPT_HTTPHEADER => array(
-        "authorization: Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ"
+        "authorization: Bearer ".$this->CONFIG_VARS['secret_api_Key']." ",
       ),
     ));
 
@@ -290,7 +290,7 @@ class Payment extends Reference implements Tap{
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_POSTFIELDS => "{\"period\":{\"date\":{\"from\":".$this->REFUNDS_FILTER['period']['date']['from'].",\"to\":".$this->REFUNDS_FILTER['period']['date']['to']."}},\"starting_after\":\"\",\"limit\":".$this->REFUNDS_FILTER['limit']."}",
       CURLOPT_HTTPHEADER => array(
-        "authorization: Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ",
+        "authorization: Bearer ".$this->CONFIG_VARS['secret_api_Key']." ",
         "content-type: application/json"
       ),
     ));
