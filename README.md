@@ -25,8 +25,8 @@ return $TapPay->charge([
         'amount' => 200,
         'currency' => 'AED',
         'threeDSecure' => 'true',
-        'description' => 'sddfsdfsdf',
-        'statement_descriptor' => 'dsfsfsdfs',
+        'description' => 'test description',
+        'statement_descriptor' => 'sample',
         'customer' => [
            'first_name' => 'customer',
            'email' => 'customer@gmail.com',
@@ -71,9 +71,9 @@ $Refund = $TapPay->refund([
     'charge_id' => 'chg_TS021620210347u9B22301284',
      'amount' => 2,
      'currency' => 'KWD',
-     'reason' => 'aaaaaaaaaaaaaa',
+     'reason' => 'type the refund reason',
      'post' => [
-        'url' => 'http://alkjdskljdlkasjdkals'
+        'url' => 'http://post_after_refund_page.php'
    ]);
 ```
 
