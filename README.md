@@ -44,7 +44,7 @@ If the information is correct, you will be directed to the payment page
 ### Get Charge By Charge id
 ```php
 $TapPay = new Payment(['secret_api_Key'=>'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ']);
-$Charge =  $TapPay->getCharge('chg_TS021620210347u9B22301284');
+$Charge =  $TapPay->getCharge($charge_id);
 ```
 
 ### Get Charges List
