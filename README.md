@@ -1,6 +1,13 @@
 # laravel-tap-payment
 Tap Payment SDK Package for PHP Laravel
 
+## Laravel compatibility
+
+ Laravel      | laravel-tap-payment
+:-------------|:----------
+ 5.6.* - 5.8.* (PHP 7 required) | 0.0.1
+ 5.6.* - 8.*   (PHP 7 required) | 0.0.2
+
 ## Installation
 
 Use the package manager [composer](https://getcomposer.org/) to install foobar.
@@ -12,7 +19,7 @@ composer require essam/laravel-tap-payment
 # Usage
 ### Create Charge Ttransaction
 ```php
-$TapPay = new Payment(['secret_api_Key'=>'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ']);
+$TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 
 $TapPay->card([
    'number' => '5123450000000008',
@@ -35,7 +42,7 @@ return $TapPay->charge([
            'url' => null
         ],
         'redirect' => [
-           'url' => route('account.check_payment')
+           'url' => url('check_payment.php')
         ]
    ]);
 ```
@@ -43,13 +50,13 @@ If the information is correct, you will be directed to the payment page
 
 ### Get Charge By Charge id
 ```php
-$TapPay = new Payment(['secret_api_Key'=>'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ']);
+$TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 $Charge =  $TapPay->getCharge($charge_id);
 ```
 
 ### Get Charges List
 ```php
-$TapPay = new Payment(['secret_api_Key'=>'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ']);
+$TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 
 $ChargesList = $TapPay->chargesList([
 'period' => [
@@ -65,12 +72,12 @@ $ChargesList = $TapPay->chargesList([
 
 ### Create Refund Ttransaction
 ```php
-$TapPay = new Payment(['secret_api_Key'=>'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ']);
+$TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 
 $Refund = $TapPay->refund([
-    'charge_id' => 'chg_TS021620210347u9B22301284',
+    'charge_id' => $charge_id,
      'amount' => 2,
-     'currency' => 'KWD',
+     'currency' => 'AED',
      'reason' => 'type the refund reason',
      'post' => [
         'url' => 'http://post_after_refund_page.php'
@@ -79,14 +86,14 @@ $Refund = $TapPay->refund([
 
 ### get Refund By Refund id
 ```php
-$TapPay = new Payment(['secret_api_Key'=>'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ']);
+$TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 
 $Refund = $TapPay->getRefund($refund_id);
 ```
 
 ### get Refunds List
 ```php
-$TapPay = new Payment(['secret_api_Key'=>'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ']);
+$TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 
 $RefundList = $TapPay->refundList([
 'period' => [
