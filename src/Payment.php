@@ -67,7 +67,7 @@ class Payment extends Reference implements Tap{
 
 
 
-  public function charge($data = []){
+  public function charge($data = [],$redirect = false){
     $this->chargeValidator($data);
     $curl = curl_init();
     curl_setopt_array($curl, array(
@@ -107,7 +107,10 @@ class Payment extends Reference implements Tap{
         throw new \Exception("Error : ".$json_response->errors[0]->code." ");
       }
       if (isset($json_response->object) && $json_response->object == "charge" && isset($json_response->transaction->url)) {
-        return redirect($json_response->transaction->url);
+        if($redirect){
+          return redirect($json_response->transaction->url);
+        }
+        return $json_response;
       }else{
         throw new \Exception("Error : ".$json_response." ");
       }
