@@ -141,7 +141,7 @@ class Reference
 
   protected function cardValidator($data){
     foreach ($this->REQUIRED_CARD_VARS as $parm => $req_status) {
-      if (key_exists($parm,$card)) {
+      if (key_exists($parm,$data)) {
         $this->CARD_VARS[$parm] = $data[$parm];
       }else{
         if($req_status){
