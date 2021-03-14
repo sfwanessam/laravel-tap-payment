@@ -104,7 +104,7 @@ class Payment extends Reference implements Tap{
     } else {
       $json_response = json_decode($response);
       if (isset($json_response->errors) && is_array($json_response->errors) && count($json_response->errors) > 0) {
-        throw new \Exception("Error : ".$json_response->errors[0]." ");
+        throw new \Exception("Error : ".$json_response->errors[0]->code." ");
       }
       if (isset($json_response->object) && $json_response->object == "charge" && isset($json_response->transaction->url)) {
         if($redirect){
