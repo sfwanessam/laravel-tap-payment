@@ -67,7 +67,7 @@ class Payment extends Reference implements Tap{
 
 
 
-  public function charge($data = [],$redirect = false){
+  public function charge($data = [],$redirect = true){
     $this->chargeValidator($data);
     $curl = curl_init();
     curl_setopt_array($curl, array(
