@@ -3,6 +3,7 @@ namespace Essam\TapPayment;
 use Request;
 
 class Payment extends Reference implements Tap{
+  protected $CARD_SET = false;
 
 
 
@@ -59,6 +60,7 @@ class Payment extends Reference implements Tap{
 
       if (isset($json_response->object) && $json_response->object == "token") {
         $this->CHARGE_VARS['source']['id'] = $json_response->id;
+        $CARD_SET = true;
       }
 
     }
@@ -70,7 +72,7 @@ class Payment extends Reference implements Tap{
   public function charge($data = [],$redirect = true){
     $this->chargeValidator($data);
     $curl = curl_init();
-    if($this->CHARGE_VARS['source']['id'] != null){
+    if(!$this->CARD_SET){
       curl_setopt_array($curl, array(
         CURLOPT_URL => "https://api.tap.company/v2/charges",
         CURLOPT_RETURNTRANSFER => true,
