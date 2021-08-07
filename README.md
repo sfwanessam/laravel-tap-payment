@@ -21,12 +21,6 @@ composer require essam/laravel-tap-payment
 ```php
 $TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 
-$TapPay->card([
-   'number' => '5123450000000008',
-   'exp_month' => 12,
-   'exp_year' => 21,
-   'cvc' => 124,
-]);
 
 return $TapPay->charge([
         'amount' => 200,
@@ -37,6 +31,9 @@ return $TapPay->charge([
         'customer' => [
            'first_name' => 'customer',
            'email' => 'customer@gmail.com',
+        ],
+        'source' => [
+          'id' => 'src_card'
         ],
         'post' => [
            'url' => null
