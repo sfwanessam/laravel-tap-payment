@@ -21,6 +21,7 @@ composer require essam/laravel-tap-payment
 ```php
 $TapPay = new Payment(['secret_api_Key'=> $secret_api_Key]);
 
+$redirect = false; // return response as json , you can use it form mobile web view application
 
 return $TapPay->charge([
         'amount' => 200,
@@ -41,7 +42,7 @@ return $TapPay->charge([
         'redirect' => [
            'url' => url('check_payment.php')
         ]
-   ]);
+   ],$redirect);
 ```
 If the information is correct, you will be directed to the payment page
 
