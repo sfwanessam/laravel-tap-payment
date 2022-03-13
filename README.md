@@ -7,6 +7,7 @@ Tap Payment SDK Package for PHP Laravel
 :-------------|:----------
  5.6.* - 5.8.* (PHP 7 required) | 0.0.1
  5.6.* - 8.*   (PHP 7 required) | 0.0.2
+ 5.6.* - 8.*   (PHP 7 required) | 0.0.3
 
 ## Installation
 
