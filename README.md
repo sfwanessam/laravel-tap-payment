@@ -112,3 +112,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+# How to use this Api
+https://medium.com/@sfwanessam9/how-to-use-laravel-tap-payment-sdk-cc9e583f84a4
