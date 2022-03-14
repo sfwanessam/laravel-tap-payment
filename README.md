@@ -108,6 +108,9 @@ $RefundList = $TapPay->refundList([
 ]);
 ```
 
+# Some Tutorial to learn How to use this Api
+https://medium.com/@sfwanessam9/how-to-use-laravel-tap-payment-sdk-cc9e583f84a4
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
@@ -116,5 +119,4 @@ Please make sure to update tests as appropriate.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-# How to use this Api
-https://medium.com/@sfwanessam9/how-to-use-laravel-tap-payment-sdk-cc9e583f84a4
+
