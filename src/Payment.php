@@ -112,7 +112,7 @@ class Payment extends Reference implements Tap{
           \"sms\":".$this->CHARGE_VARS['receipt']['sms']."},\"customer\":{\"first_name\":\"".$this->CHARGE_VARS['customer']['first_name']."\",
           \"middle_name\":\"".$this->CHARGE_VARS['customer']['middle_name']."\",\"last_name\":\"".$this->CHARGE_VARS['customer']['last_name']."\",
           \"email\":\"".$this->CHARGE_VARS['customer']['email']."\",\"phone\":{\"country_code\":\"".$this->CHARGE_VARS['customer']['phone']['country_code']."\",
-          \"number\":\"".$this->CHARGE_VARS['customer']['phone']['number']."\"}},\"merchant\":{\"id\":\" ".$this->CHARGE_VARS['merchant']['id']."\"},
+          \"number\":\"".$this->CHARGE_VARS['customer']['phone']['number']."\"}},\"merchant\":{\"id\":\"".$this->CHARGE_VARS['merchant']['id']."\"},
           \"source\":{\"id\":\"".$this->CHARGE_VARS['source']['id']."\"},\"post\":{\"url\":\"".$this->CHARGE_VARS['post']['url']."\"},
           \"redirect\":{\"url\":\"".$this->CHARGE_VARS['redirect']['url']."\"}}",
         CURLOPT_HTTPHEADER => array(

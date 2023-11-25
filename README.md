@@ -43,6 +43,9 @@ return $TapPay->charge([
         'post' => [
            'url' => null
         ],
+        'merchant' => [
+           'id' => 'YOUR-MERCHANT-ID'  //Include this when you are going to live
+        ],
         'redirect' => [
            'url' => url('check_payment.php')
         ]
